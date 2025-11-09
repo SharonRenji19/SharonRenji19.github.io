@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sharon Renji | AI & ML Engineer Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Font: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Custom Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'brand-teal': {
+                            100: '#CCFBF1',
+                            200: '#99F6E4',
+                            300: '#5EEAD4',
+                            400: '#2DD4BF',
+                            500: '#14B8A6',
+                            600: '#0D9488',
+                            700: '#0F766E',
+                            800: '#115E59',
+                            900: '#134E4A',
+                        },
+                        'brand-slate': {
+                            100: '#F1F5F9',
+                            200: '#E2E8F0',
+                            300: '#CBD5E1',
+                            400: '#94A3B8',
+                            500: '#64748B',
+                            600: '#475569',
+                            700: '#334155',
+                            800: '#1E293B',
+                            900: '#0F172A',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom scrollbar for a more modern look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0F172A; /* brand-slate-900 */
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #334155; /* brand-slate-700 */
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #475569; /* brand-slate-600 */
+        }
+        /* Style for active nav link */
+        .nav-link.active {
+            color: #2DD4BF; /* brand-teal-400 */
+            font-weight: 600;
+        }
+        .nav-link {
+            transition: all 0.2s ease-in-out;
+        }
+        .nav-link:hover {
+            color: #5EEAD4; /* brand-teal-300 */
+        }
+    </style>
+</head>
+<body class="bg-brand-slate-900 text-brand-slate-300 font-sans leading-relaxed">
+
+    <!-- Header & Navigation -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-brand-slate-900/80 backdrop-blur-md shadow-md">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- Logo/Name -->
+            <a href="#home" class="text-2xl font-bold text-white hover:text-brand-teal-400 transition-colors">
+                Sharon Renji
+            </a>
+
+            <!-- Mobile Menu Button -->
+            <button id="menu-btn" class="md:hidden text-white focus:outline-none">
+                <svg id="menu-open-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+                <svg id="menu-close-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x hidden"><line x1="18" x2="6" y1="6" y2="18"/><line x1="6" x2="18" y1="6" y2="18"/></svg>
+            </button>
+
+            <!-- Desktop Navigation -->
+            <ul class="hidden md:flex space-x-6 text-lg">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </nav>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-brand-slate-800">
+            <ul class="flex flex-col items-center py-4 space-y-4 text-lg">
+                <li><a href="#home" class="nav-link mobile-nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link mobile-nav-link">About</a></li>
+                <li><a href="#experience" class="nav-link mobile-nav-link">Experience</a></li>
+                <li><a href="#projects" class="nav-link mobile-nav-link">Projects</a></li>
+                <li><a href="#skills" class="nav-link mobile-nav-link">Skills</a></li>
+                <li><a href="#contact" class="nav-link mobile-nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-6 pt-24"> <!-- pt-24 to offset fixed header -->
+
+        <!-- Section: Home (Hero) -->
+        <section id="home" class="min-h-screen flex items-center justify-center text-center -mt-24">
+            <div>
+                <h1 class="text-5xl md:text-7xl font-bold text-white mb-4">
+                    Hi, I'm <span class="text-brand-teal-400">Sharon Renji</span>
+                </h1>
+                <h2 class="text-2xl md:text-3xl font-medium text-brand-slate-200 mb-6">
+                    Aspiring AI & Machine Learning Engineer
+                </h2>
+                <p class="text-lg text-brand-slate-400 max-w-3xl mx-auto mb-8">
+                    A detail-oriented and proactive engineering student from Christ University, Bangalore, with a strong academic foundation in AIML and a proven track record of managing complex responsibilities with efficiency and professionalism.
+                </p>
+                <!-- MODIFIED THIS DIV FOR 3 BUTTONS -->
+                <div class="flex flex-wrap justify-center gap-4 mb-8">
+                    <a href="#projects" class="bg-brand-teal-600 text-white font-semibold px-6 py-3 rounded-lg shadow-lg hover:bg-brand-teal-500 transition-all duration-300 ease-in-out transform hover:-translate-y-1">
+                        View My Work
+                    </a>
+                    <!-- NEW BUTTON ADDED HERE -->
+                    <a href="Sharon Resume.pdf" download="Sharon_Renji_Resume.pdf" class="bg-brand-slate-700 text-white font-semibold px-6 py-3 rounded-lg shadow-lg hover:bg-brand-slate-600 transition-all duration-300 ease-in-out inline-flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-download mr-2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
+                        Download Resume
+                    </a>
+                    <a href="#contact" class_name="bg-brand-slate-700 text-white font-semibold px-6 py-3 rounded-lg shadow-lg hover:bg-brand-slate-600 transition-all duration-300 ease-in-out">
+                        Get In Touch
+                    </a>
+                </div>
+                <div class="flex justify-center space-x-6">
+                    <a href="https://linkedin.com/in/sharonrenji" target="_blank" rel="noopener noreferrer" class="text-brand-slate-400 hover:text-brand-teal-400 transition-colors" title="LinkedIn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+                    </a>
+                    <a href="mailto:sharonrenji2005@gmail.com" class="text-brand-slate-400 hover:text-brand-teal-400 transition-colors" title="Email">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                    </a>
+                    <!-- Added GitHub Icon Link -->
+                    <a href="https://github.com/SharonRenji19" target="_blank" rel="noopener noreferrer" class="text-brand-slate-400 hover:text-brand-teal-400 transition-colors" title="GitHub">
+                         <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-github"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-1.5 6-6.5a4.5 4.5 0 0 0-1-3c.1-1.1.1-2.2 0-3-.5-.2-1.7.2-3 1.5a10.6 10.6 0 0 0-5 0c-1.3-1.3-2.5-1.7-3-1.5-.1 1-.1 2 0 3a4.5 4.5 0 0 0-1 3c0 5 3 6.5 6 6.5-1 .9-1 1.9-1 3.5v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: About Me -->
+        <section id="about" class="py-20 md:py-32">
+            <h2 class="text-4xl font-bold text-white text-center mb-12">About Me</h2>
+            <div class="max-w-4xl mx-auto bg-brand-slate-800 p-8 rounded-lg shadow-xl">
+                <p class="text-lg text-brand-slate-300 leading-relaxed">
+                    I am a detail-oriented and proactive student with a strong academic foundation in AIML from Christ University, Bangalore. My experience as an Editor and core team member at INICIA has equipped me with exceptional organizational, communication, and coordination skills.
+                </p>
+                <br>
+                <p class="text-lg text-brand-slate-300 leading-relaxed">
+                    I have a proven track record of managing multiple responsibilities with efficiency and professionalism, from planning workshops and creating engaging content to collaborating with diverse stakeholders, both national and international. I'm passionate about leveraging technology to solve real-world problems and am eager to apply my skills in a challenging and high-performing role.
+                </p>
+            </div>
+        </section>
+
+        <!-- Section: Leadership & Experience -->
+        <section id="experience" class="py-20 md:py-32">
+            <h2 class="text-4xl font-bold text-white text-center mb-16">Leadership & Experience</h2>
+            <div class="relative max-w-3xl mx-auto">
+                <!-- Vertical Timeline Bar -->
+                <div class="absolute left-4 md:left-1/2 top-0 h-full w-1 border-l-2 border-brand-teal-600 border-dashed"></div>
+
+                <!-- Timeline Items -->
+                <div class="space-y-16">
+                    
+                    <!-- Item 1 -->
+                    <div class="relative">
+                        <div class="md:flex items-center">
+                            <!-- Date (Left on Desktop) -->
+                            <div class="md:w-1/2 md:pr-8 md:text-right">
+                                <p class="text-lg font-semibold text-brand-teal-400">July 2025 - Present</p>
+                            </div>
+                            <!-- Dot -->
+                            <div class="absolute left-4 md:left-1/2 top-1 -translate-x-1/2 w-3 h-3 bg-brand-teal-400 rounded-full ring-4 ring-brand-slate-900"></div>
+                            <!-- Card (Right on Desktop) -->
+                            <div class="md:w-1/2 md:pl-8 ml-10 md:ml-0 mt-4 md:mt-0">
+                                <div class="bg-brand-slate-800 p-6 rounded-lg shadow-xl">
+                                    <h3 class="text-xl font-bold text-white mb-2">Vice Chair - IEEE AESS</h3>
+                                    <p class="text-md font-medium text-brand-slate-400 mb-3">Christ University</p>
+                                    <ul class="list-disc list-inside text-brand-slate-300 space-y-2">
+                                        <li>Leading the student chapter's initiatives in aerospace, embedded systems, and AI applications.</li>
+                                        <li>Coordinating workshops, seminars, and technical events to promote innovation.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="relative">
+                        <div class="md:flex items-center md:flex-row-reverse">
+                            <!-- Date (Right on Desktop) -->
+                            <div class="md:w-1/2 md:pl-8 md:text-left">
+                                <p class="text-lg font-semibold text-brand-teal-400">August 2025 - Present</p>
+                            </div>
+                            <!-- Dot -->
+                            <div class="absolute left-4 md:left-1/2 top-1 -translate-x-1/2 w-3 h-3 bg-brand-teal-400 rounded-full ring-4 ring-brand-slate-900"></div>
+                            <!-- Card (Left on Desktop) -->
+                            <div class="md:w-1/2 md:pr-8 ml-10 md:ml-0 mt-4 md:mt-0 md:text-right">
+                                <div class="bg-brand-slate-800 p-6 rounded-lg shadow-xl text-left">
+                                    <h3 class="text-xl font-bold text-white mb-2">Student Council Representative</h3>
+                                    <p class="text-md font-medium text-brand-slate-400 mb-3">Christ University</p>
+                                    <ul class="list-disc list-inside text-brand-slate-300 space-y-2">
+                                        <li>Collaborated with faculty and council members to improve student experience.</li>
+                                        <li>Represented students in event planning, budgeting, and coordination.</li>
+                                        <li>Drafted documents, maintained records, and handled confidential material.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 3 -->
+                    <div class="relative">
+                        <div class="md:flex items-center">
+                            <!-- Date (Left on Desktop) -->
+                            <div class="md:w-1/2 md:pr-8 md:text-right">
+                                <p class="text-lg font-semibold text-brand-teal-400">August 2025 - Present</p>
+                            </div>
+                            <!-- Dot -->
+                            <div class="absolute left-4 md:left-1/2 top-1 -translate-x-1/2 w-3 h-3 bg-brand-teal-400 rounded-full ring-4 ring-brand-slate-900"></div>
+                            <!-- Card (Right on Desktop) -->
+                            <div class="md:w-1/2 md:pl-8 ml-10 md:ml-0 mt-4 md:mt-0">
+                                <div class="bg-brand-slate-800 p-6 rounded-lg shadow-xl">
+                                    <h3 class="text-xl font-bold text-white mb-2">Editor & Core Team Member - INICIA</h3>
+                                    <p class="text-md font-medium text-brand-slate-400 mb-3">Christ University</p>
+                                    <ul class="list-disc list-inside text-brand-slate-300 space-y-2">
+                                        <li>Provided high-level administrative support for editorial planning.</li>
+                                        <li>Managed schedules, coordinated meetings, and ensured smooth communication.</li>
+                                        <li>Drafted and edited professional documents and maintained records.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 4 -->
+                    <div class="relative">
+                        <div class="md:flex items-center md:flex-row-reverse">
+                            <!-- Date (Right on Desktop) -->
+                            <div class="md:w-1/2 md:pl-8 md:text-left">
+                                <p class="text-lg font-semibold text-brand-teal-400">Dec 2024 - Present</p>
+                            </div>
+                            <!-- Dot -->
+                            <div class="absolute left-4 md:left-1/2 top-1 -translate-x-1/2 w-3 h-3 bg-brand-teal-400 rounded-full ring-4 ring-brand-slate-900"></div>
+                            <!-- Card (Left on Desktop) -->
+                            <div class="md:w-1/2 md:pr-8 ml-10 md:ml-0 mt-4 md:mt-0 md:text-right">
+                                <div class="bg-brand-slate-800 p-6 rounded-lg shadow-xl text-left">
+                                    <h3 class="text-xl font-bold text-white mb-2">IEEE GRSS EXECOM & ComSoc Member</h3>
+                                    <ul class="list-disc list-inside text-brand-slate-300 space-y-2">
+                                        <li>Assisted in end-to-end event execution for a high-profile university event.</li>
+                                        <li>Managed planning timelines and coordinated with multiple stakeholders.</li>
+                                        <li>Designed presentation materials and supported team coordination.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 5 -->
+                    <div class="relative">
+                        <div class="md:flex items-center">
+                            <!-- Date (Left on Desktop) -->
+                            <div class="md:w-1/2 md:pr-8 md:text-right">
+                                <p class="text-lg font-semibold text-brand-teal-400">May 2025 - July 2025</p>
+                            </div>
+                            <!-- Dot -->
+                            <div class="absolute left-4 md:left-1/2 top-1 -translate-x-1/2 w-3 h-3 bg-brand-teal-400 rounded-full ring-4 ring-brand-slate-900"></div>
+                            <!-- Card (Right on Desktop) -->
+                            <div class="md:w-1/2 md:pl-8 ml-10 md:ml-0 mt-4 md:mt-0">
+                                <div class="bg-brand-slate-800 p-6 rounded-lg shadow-xl">
+                                    <h3 class="text-xl font-bold text-white mb-2">Center for Excellence - ADAS Project Team Lead</h3>
+                                    <ul class="list-disc list-inside text-brand-slate-300 space-y-2">
+                                        <li>Designed a hardware-driven steering control mechanism for autonomous driving.</li>
+                                        <li>Focused on converting simulated driving data into precise actuator control.</li>
+                                        <li>Demonstrated initiative in problem-solving and multitasking.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Projects -->
+        <section id="projects" class="py-20 md:py-32">
+            <h2 class="text-4xl font-bold text-white text-center mb-16">Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+
+                <!-- Project Card 1 -->
+                <div class="bg-brand-slate-800 p-6 rounded-lg shadow-xl flex flex-col hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+                    <h3 class="text-2xl font-bold text-white mb-3">Autonomous Vehicle Control</h3>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-brand-teal-900 text-brand-teal-200 text-xs font-semibold px-3 py-1 rounded-full">Deep Learning</span>
+                        <span class="bg-brand-teal-900 text-brand-teal-200 text-xs font-semibold px-3 py-1 rounded-full">Embedded Systems</span>
+                        <span class="bg-brand-teal-900 text-brand-teal-200 text-xs font-semibold px-3 py-1 rounded-full">Keras/TensorFlow</span>
+                    </div>
+                    <ul class="list-disc list-inside text-brand-slate-300 space-y-2 flex-grow">
+                        <li>Built a CNN-based behavioral cloning model with Keras/TensorFlow to autonomously navigate the simulator.</li>
+                        <li>Designed a steering control prototype with PAI 01 Linear Actuator and TCRT5000 IR sensors.</li>
+                        <li>Implemented precise ±45mm actuator stop control for accurate steering in real-world testing.</li>
+                    </ul>
+                    <a href="https://github.com/SharonRenji19/Complete-Self-Driving-Car" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center mt-4 text-brand-teal-400 font-medium hover:text-brand-teal-300 transition-colors">
+                        View on GitHub
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right ml-2"><line x1="5" x2="19" y1="12" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                    </a>
+                </div>
+
+                <!-- Project Card 2 -->
+                <div class="bg-brand-slate-800 p-6 rounded-lg shadow-xl flex flex-col hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+                    <h3 class="text-2xl font-bold text-white mb-3">Climate Event Prediction & Visualization (Ongoing)</h3>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-brand-teal-900 text-brand-teal-200 text-xs font-semibold px-3 py-1 rounded-full">Machine Learning</span>
+                        <span class="bg-brand-teal-900 text-brand-teal-200 text-xs font-semibold px-3 py-1 rounded-full">Time-Series</span>
+                        <span class="bg-brand-teal-900 text-brand-teal-200 text-xs font-semibold px-3 py-1 rounded-full">Data Visualization</span>
+                    </div>
+                    <ul class="list-disc list-inside text-brand-slate-300 space-y-2 flex-grow">
+                        <li>Developing an ML system to predict tornadoes, dust storms, and extreme weather using NASA & Earth data.</li>
+                        <li>Implementing time-series forecasting and anomaly detection models for early warning signals.</li>
+                        <li>Aims to provide an integrated platform for climate risk forecasting and disaster preparedness.</li>
+                    </ul>
+                    <!-- No GitHub link provided in resume, so it's omitted -->
+                </div>
+                
+                <!-- Project Card 3: AI Threat Detection -->
+                <div class="bg-brand-slate-800 p-6 rounded-lg shadow-xl flex flex-col hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+                    <h3 class="text-2xl font-bold text-white mb-3">AI Threat Detection</h3>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-brand-teal-900 text-brand-teal-200 text-xs font-semibold px-3 py-1 rounded-full">Cybersecurity</span>
+                        <span class="bg-brand-teal-900 text-brand-teal-200 text-xs font-semibold px-3 py-1 rounded-full">AI/ML</span>
+                        <span class="bg-brand-teal-900 text-brand-teal-200 text-xs font-semibold px-3 py-1 rounded-full">SANS</span>
+                    </div>
+                    <ul class="list-disc list-inside text-brand-slate-300 space-y-2 flex-grow">
+                        <li>A project based on a SANS cybersecurity problem statement.</li>
+                        <li>Detects known and upcoming threats using AI.</li>
+                        <li>Designed to attempt self-resolution of identified threats.</li>
+                    </ul>
+                    <a href="https://github.com/SharonRenji19/AI-Threat-Detection" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center mt-4 text-brand-teal-400 font-medium hover:text-brand-teal-300 transition-colors">
+                        View on GitHub
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right ml-2"><line x1="5" x2="19" y1="12" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                    </a>
+                </div>
+                
+                <!-- Project Card 4: Jarvis- -->
+                <div class="bg-brand-slate-800 p-6 rounded-lg shadow-xl flex flex-col hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+                    <h3 class="text-2xl font-bold text-white mb-3">Jarvis (Personal Assistant)</h3>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-brand-teal-900 text-brand-teal-200 text-xs font-semibold px-3 py-1 rounded-full">Python</span>
+                        <span class="bg-brand-teal-900 text-brand-teal-200 text-xs font-semibold px-3 py-1 rounded-full">Image Detection</span>
+                        <span class="bg-brand-teal-900 text-brand-teal-200 text-xs font-semibold px-3 py-1 rounded-full">Speech Recognition</span>
+                    </div>
+                    <ul class="list-disc list-inside text-brand-slate-300 space-y-2 flex-grow">
+                        <li>A personal assistant project named Jarvis.</li>
+                        <li>Currently features image detection capabilities.</li>
+                        <li>Future scope includes adding advanced speech recognition and response features.</li>
+                    </ul>
+                     <a href="https://github.com/SharonRenji19/Jarvis-" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center mt-4 text-brand-teal-400 font-medium hover:text-brand-teal-300 transition-colors">
+                        View on GitHub
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right ml-2"><line x1="5" x2="19" y1="12" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                    </a>
+                </div>
+                
+                <!-- Project Card 5: Churn Prediction -->
+                <div class="bg-brand-slate-800 p-6 rounded-lg shadow-xl flex flex-col hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+                    <h3 class="text-2xl font-bold text-white mb-3">Churn Prediction</h3>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-brand-teal-900 text-brand-teal-200 text-xs font-semibold px-3 py-1 rounded-full">Machine Learning</span>
+                        <span class="bg-brand-teal-900 text-brand-teal-200 text-xs font-semibold px-3 py-1 rounded-full">Data Analysis</span>
+                        <span class="bg-brand-teal-900 text-brand-teal-200 text-xs font-semibold px-3 py-1 rounded-full">Python</span>
+                    </div>
+                    <ul class="list-disc list-inside text-brand-slate-300 space-y-2 flex-grow">
+                        <li>Developed a model to predict customer churn.</li>
+                        <li>Involves data preprocessing, feature engineering, and model training.</li>
+                        <li>Aims to help businesses identify and retain at-risk customers.</li>
+                    </ul>
+                     <a href="https://github.com/SharonRenji19/Churn-Prediction" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center mt-4 text-brand-teal-400 font-medium hover:text-brand-teal-300 transition-colors">
+                        View on GitHub
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right ml-2"><line x1="5" x2="19" y1="12" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                    </a>
+                </div>
+                
+                <!-- Project Card 6: Resume Screening -->
+                <div class="bg-brand-slate-800 p-6 rounded-lg shadow-xl flex flex-col hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+                    <h3 class="text-2xl font-bold text-white mb-3">Resume Screening</h3>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-brand-teal-900 text-brand-teal-200 text-xs font-semibold px-3 py-1 rounded-full">NLP</span>
+                        <span class="bg-brand-teal-900 text-brand-teal-200 text-xs font-semibold px-3 py-1 rounded-full">Machine Learning</span>
+                        <span class="bg-brand-teal-900 text-brand-teal-200 text-xs font-semibold px-3 py-1 rounded-full">Python</span>
+                    </div>
+                    <ul class="list-disc list-inside text-brand-slate-300 space-y-2 flex-grow">
+                        <li>An NLP-based tool to automate the resume screening process.</li>
+                        <li>Parses resumes to extract key information and skills.</li>
+                        <li>Matches candidates to job descriptions, ranking them by suitability.</li>
+                    </ul>
+                     <a href="https://github.com/SharonRenji19/Resume-Screening" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center mt-4 text-brand-teal-400 font-medium hover:text-brand-teal-300 transition-colors">
+                        View on GitHub
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right ml-2"><line x1="5" x2="19" y1="12" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Section: Skills -->
+        <section id="skills" class="py-20 md:py-32">
+            <h2 class="text-4xl font-bold text-white text-center mb-16">Skills</h2>
+            <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
+                
+                <!-- Technical Skills -->
+                <div>
+                    <h3 class="text-2xl font-bold text-white text-center mb-8">Technical Skills</h3>
+                    <div class="flex flex-wrap justify-center gap-3">
+                        <span class="bg-brand-slate-700 text-brand-teal-300 text-md font-medium px-4 py-2 rounded-lg shadow-md">Python</span>
+                        <span class="bg-brand-slate-700 text-brand-teal-300 text-md font-medium px-4 py-2 rounded-lg shadow-md">Machine Learning</span>
+                        <span class="bg-brand-slate-700 text-brand-teal-300 text-md font-medium px-4 py-2 rounded-lg shadow-md">Natural Language Processing</span>
+                        <span class="bg-brand-slate-700 text-brand-teal-300 text-md font-medium px-4 py-2 rounded-lg shadow-md">YOLO & OpenCV</span>
+                        <span class="bg-brand-slate-700 text-brand-teal-300 text-md font-medium px-4 py-2 rounded-lg shadow-md">Data Analysis</span>
+                        <span class="bg-brand-slate-700 text-brand-teal-300 text-md font-medium px-4 py-2 rounded-lg shadow-md">Automation</span>
+                        <span class="bg-brand-slate-700 text-brand-teal-300 text-md font-medium px-4 py-2 rounded-lg shadow-md">Speech Recognition</span>
+                        <span class="bg-brand-slate-700 text-brand-teal-300 text-md font-medium px-4 py-2 rounded-lg shadow-md">Pyttsx3</span>
+                    </div>
+                </div>
+
+                <!-- Soft Skills -->
+                <div>
+                    <h3 class="text-2xl font-bold text-white text-center mb-8">Professional Skills</h3>
+                    <div class="flex flex-wrap justify-center gap-3">
+                        <span class="bg-brand-slate-700 text-brand-slate-100 text-md font-medium px-4 py-2 rounded-lg shadow-md">Project Coordination</span>
+                        <span class="bg-brand-slate-700 text-brand-slate-100 text-md font-medium px-4 py-2 rounded-lg shadow-md">Event Planning</span>
+                        <span class="bg-brand-slate-700 text-brand-slate-100 text-md font-medium px-4 py-2 rounded-lg shadow-md">Communication</span>
+                        <span class="bg-brand-slate-700 text-brand-slate-100 text-md font-medium px-4 py-2 rounded-lg shadow-md">Schedule & Calendar Management</span>
+                        <span class="bg-brand-slate-700 text-brand-slate-100 text-md font-medium px-4 py-2 rounded-lg shadow-md">Time Management & Prioritization</span>
+                        <span class="bg-brand-slate-700 text-brand-slate-100 text-md font-medium px-4 py-2 rounded-lg shadow-md">Discretion & Confidentiality</span>
+                    </div>
+                </div>
+            </div>
+             <!-- Languages -->
+            <div class="max-w-5xl mx-auto mt-12">
+                <h3 class="text-2xl font-bold text-white text-center mb-8">Languages</h3>
+                <div class="flex flex-wrap justify-center gap-3">
+                    <span class="bg-brand-slate-700 text-brand-slate-100 text-md font-medium px-4 py-2 rounded-lg shadow-md">English (Professional)</span>
+                    <span class="bg-brand-slate-700 text-brand-slate-100 text-md font-medium px-4 py-2 rounded-lg shadow-md">Hindi (Native)</span>
+                    <span class="bg-brand-slate-700 text-brand-slate-100 text-md font-medium px-4 py-2 rounded-lg shadow-md">Malayalam (Native)</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Contact -->
+        <section id="contact" class="py-20 md:py-32 text-center">
+            <h2 class="text-4xl font-bold text-white mb-6">Get In Touch</h2>
+            <p class="text-lg text-brand-slate-400 max-w-xl mx-auto mb-12">
+                I'm always open to discussing new projects, leadership roles, or opportunities. Feel free to reach out!
+            </p>
+            
+            <div class="flex flex-col md:flex-row justify-center items-center gap-8">
+                <!-- Email -->
+                <div class="flex items-center gap-3 bg-brand-slate-800 p-4 rounded-lg">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail text-brand-teal-400"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                    <a href="mailto:sharonrenji2005@gmail.com" class="text-lg text-white hover:text-brand-teal-300">sharonrenji2005@gmail.com</a>
+                    <button id="copy-email-btn" class="ml-2 bg-brand-slate-700 text-brand-slate-300 px-3 py-1 rounded-md text-sm hover:bg-brand-slate-600 transition-colors" data-email="sharonrenji2005@gmail.com">
+                        Copy
+                    </button>
+                    <span id="copy-success" class="text-brand-teal-400 text-sm hidden">Copied!</span>
+                </div>
+                
+                <!-- Phone -->
+                <div class="flex items-center gap-3 bg-brand-slate-800 p-4 rounded-lg">
+                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    <a href="tel:+918278669464" class="text-lg text-white hover:text-brand-teal-300">+91 8278669464</a>
+                </div>
+
+                <!-- LinkedIn -->
+                 <div class="flex items-center gap-3 bg-brand-slate-800 p-4 rounded-lg">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-linkedin text-brand-teal-400"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+                    <a href="https://linkedin.com/in/sharonrenji" target="_blank" rel="noopener noreferrer" class="text-lg text-white hover:text-brand-teal-300">linkedin.com/in/sharonrenji</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-8 bg-brand-slate-900 border-t border-brand-slate-800">
+        <div class="container mx-auto px-6 text-center text-brand-slate-500">
+            <p>&copy; <span id="current-year"></span> Sharon Renji. All rights reserved.</p>
+        </div>
+    </footer>
+
+
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuBtn = document.getElementById('menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuOpenIcon = document.getElementById('menu-open-icon');
+            const menuCloseIcon = document.getElementById('menu-close-icon');
+
+            // Toggle mobile menu
+            menuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+                menuOpenIcon.classList.toggle('hidden');
+                menuCloseIcon.classList.toggle('hidden');
+            });
+
+            // Close mobile menu when a link is clicked
+            const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+            mobileNavLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                    menuOpenIcon.classList.remove('hidden');
+                    menuCloseIcon.classList.add('hidden');
+                });
+            });
+
+            // Smooth scrolling for all anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    if(targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // Active nav link highlighting on scroll
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-link');
+
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.3 // 30% of the section must be visible
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const id = entry.target.getAttribute('id');
+                        navLinks.forEach(link => {
+                            link.classList.remove('active');
+                            if (link.getAttribute('href') === `#${id}`) {
+                                link.classList.add('active');
+                            }
+                        });
+                    }
+                });
+            }, observerOptions);
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+
+            // Set current year in footer
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+
+            // Copy email functionality
+            const copyBtn = document.getElementById('copy-email-btn');
+            const copySuccess = document.getElementById('copy-success');
+
+            copyBtn.addEventListener('click', () => {
+                const email = copyBtn.getAttribute('data-email');
+                
+                // Use execCommand for broader compatibility within iframes
+                const textArea = document.createElement('textarea');
+                textArea.value = email;
+                textArea.style.position = 'fixed'; //avoid scrolling to bottom
+                textArea.style.opacity = '0';
+                document.body.appendChild(textArea);
+                textArea.focus();
+                textArea.select();
+                
+                try {
+                    const successful = document.execCommand('copy');
+                    if(successful) {
+                        copyBtn.classList.add('hidden');
+                        copySuccess.classList.remove('hidden');
+                        
+                        setTimeout(() => {
+                            copyBtn.classList.remove('hidden');
+                            copySuccess.classList.add('hidden');
+                        }, 2000);
+                    } else {
+                         console.error('Failed to copy email.');
+                    }
+                } catch (err) {
+                    console.error('Error in copying email: ', err);
+                }
+                
+                document.body.removeChild(textArea);
+            });
+        });
+    </script>
+
+</body>
+</html>
